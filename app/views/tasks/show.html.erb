@@ -1,0 +1,22 @@
+<div class="container">
+  <h2> <%= @task.title %> </h2>
+
+  <p> <i> <%= @task.details %> </i> </p>
+
+  <% if @task.completed %>
+    <input type="checkbox" checked> Completed
+  <% else %>
+    <input type="checkbox"> Not completed
+  <% end %>
+
+  <p>
+    <%= link_to tasks_path do %>
+      <div class="back">
+        <i class="fa-solid fa-rotate-left icon-back"></i>
+        <span class="return-back"> Back to list </span>
+      </div>
+    <% end %>
+  </p>
+
+  <p><%= link_to "Edit task", edit_path(@task) %></p>
+</div>
